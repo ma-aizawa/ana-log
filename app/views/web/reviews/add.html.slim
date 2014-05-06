@@ -1,0 +1,9 @@
+= form_for(@review, url: {action: :create}) do |f|
+  div.field
+    = f.label :body
+    br
+    = f.text_area :body
+  div.actions
+    = f.submit
+
+= link_to '一覧', controller: 'web/reviews', action: :index

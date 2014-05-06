@@ -1,0 +1,5 @@
+ja:
+  activerecord:
+    attributes:
+      review:
+        body: 感想

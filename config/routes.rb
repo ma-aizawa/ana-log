@@ -4,6 +4,8 @@ AnaLog::Application.routes.draw do
   post 'add' => 'web/reviews#create'
 
   scope 'game' do
+    get '/' => 'web/games#index'
     get 'add' => 'web/games#add'
+    post 'add' => 'web/games#create'
   end
 end

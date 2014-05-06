@@ -1,4 +1,10 @@
 h1 レビュー
 p ここにレビューの一覧を表示
 
-= link_to '感想書く', controller: 'web/reviews', action: :add
+ul
+  li
+    = link_to '感想書く', controller: 'web/reviews', action: :add
+  li
+    = link_to 'ゲームの一覧', controller: 'web/games', action: :index
+  li
+    = link_to 'ゲームの登録', controller: 'web/games', action: :add

@@ -1,0 +1,12 @@
+h2 登録済みゲーム一覧
+
+- @games.each do |game|
+  div
+    = game.name
+    |&nbsp;|&nbsp;
+    = game.description
+
+br
+= link_to 'ゲームを登録', controller: 'web/games', action: :add
+br
+= link_to 'レビュー一覧', controller: 'web/reviews', action: :index

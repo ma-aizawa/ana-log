@@ -1,6 +1,12 @@
 h1 レビュー
 p ここにレビューの一覧を表示
 
+- @reviews.each do |review|
+  = review.game.name
+  |&nbsp;|&nbsp;
+  = review.body
+  br
+
 ul
   li
     = link_to '感想書く', controller: 'web/reviews', action: :add

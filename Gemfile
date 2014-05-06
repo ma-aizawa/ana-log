@@ -15,9 +15,8 @@ gem 'turbolinks'
 
 gem 'jbuilder', '~> 1.2'
 
-group :production do
-  gem 'mysql2'
-end
+gem 'mysql'
+gem 'mysql2'
 
 group :doc do
   gem 'sdoc', require: false

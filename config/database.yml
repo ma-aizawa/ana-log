@@ -19,7 +19,11 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql
+  encoding: utf8mb4
+  database: ana-log_production
   pool: 5
+  username: analog
+  password: analogadmin
   timeout: 5000
+  socket: /tmp/mysql.sock

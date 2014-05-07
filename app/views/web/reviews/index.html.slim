@@ -1,5 +1,4 @@
 h1 レビュー
-p ここにレビューの一覧を表示
 
 - @reviews.each do |review|
   = review.game.name
@@ -9,8 +8,6 @@ p ここにレビューの一覧を表示
 
 ul
   li
-    = link_to '感想書く', controller: 'web/reviews', action: :add
+    = link_to '感想書く', add_play_path
   li
-    = link_to 'ゲームの一覧', controller: 'web/games', action: :index
-  li
-    = link_to 'ゲームの登録', controller: 'web/games', action: :add
+    = link_to 'ゲームの一覧', game_list_path

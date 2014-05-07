@@ -7,6 +7,6 @@ h2 登録済みゲーム一覧
     = game.description
 
 br
-= link_to 'ゲームを登録', controller: 'web/games', action: :add
+= link_to 'ゲームを登録', add_game_path
 br
-= link_to 'レビュー一覧', controller: 'web/reviews', action: :index
+= link_to '遊んだ履歴', play_history_path

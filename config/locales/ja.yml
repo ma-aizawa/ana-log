@@ -3,3 +3,6 @@ ja:
     attributes:
       review:
         body: 感想
+      play:
+        date: 遊んだ日付
+        game: 遊んだゲーム

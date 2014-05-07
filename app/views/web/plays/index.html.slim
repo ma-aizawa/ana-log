@@ -1,0 +1,14 @@
+h2 遊んだ履歴
+p ここに遊んだ履歴一覧を表示
+
+- @play_history.each do |play|
+  = play.date
+  |&nbsp;|&nbsp;
+  = play.game.name
+
+
+ul
+  li
+    =link_to '遊んだよ', add_play_path
+  li
+    = link_to 'ゲームの一覧', game_list_path

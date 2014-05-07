@@ -1,0 +1,13 @@
+= form_for(@play, url: create_play_path) do |f|
+  div.field
+    = f.label :date
+    br
+    = f.date_field :date
+  div.field
+    = f.label :game
+    br
+    = f.select :game_id, @games.map{|g| [g.name, g.id]}, include_blank: true
+
+  div.actions
+    = f.submit
+= link_to '遊んだ履歴', play_history_path

@@ -6,8 +6,20 @@
   div.field
     = f.label :game
     br
-    = f.select :game_id, @games.map{|g| [g.name, g.id]}, include_blank: true
+    input#search_key type="search"
+    = f.hidden_field :game_id
+
+  /div.field
+  /  = f.label :game
+  /  br
+  /  = f.select :game_id, @games.map{|g| [g.name, g.id]}, include_blank: true
 
   div.actions
     = f.submit
 = link_to '遊んだ履歴', play_history_path
+
+= javascript_include_tag 'web/games/add'
+javascript:
+  $(function() {
+    window.add = new AddPlay();
+  });

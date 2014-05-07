@@ -8,4 +8,10 @@ AnaLog::Application.routes.draw do
     get 'add' => 'web/games#add', as: :add_game
     post 'add' => 'web/games#create', as: :register_game
   end
+
+  namespace :api do
+    scope :game do
+      get '/search' => 'games#search', as: :search_game
+    end
+  end
 end

@@ -4,6 +4,8 @@ class Play < ActiveRecord::Base
 
   after_initialize :init
 
+  validates :game_id, :name, presence: true
+
   delegate :game_name, to: :game
 
   def init

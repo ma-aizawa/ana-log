@@ -7,6 +7,6 @@ class Play < ActiveRecord::Base
   delegate :game_name, to: :game
 
   def init
-    self.date = Date.today
+    self.date ||= Date.today
   end
 end

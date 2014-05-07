@@ -9,7 +9,7 @@ class Web::GamesController < Web::ApplicationController
 
   def create
     Game.create!(game_params)
-    redirect_to action: :index
+    redirect_to game_list_path
   rescue ActiveRecord::RecordInvalid
     @game = Game.new(game_params)
     render :add

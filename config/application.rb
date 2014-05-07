@@ -16,7 +16,7 @@ module AnaLog
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     config.time_zone = 'Tokyo'
 
-    condig.encoding = 'UTF-8'
+    config.encoding = 'UTF-8'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]

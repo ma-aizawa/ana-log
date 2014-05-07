@@ -13,6 +13,4 @@ h3 ゲーム登録
   div.actions
     = f.submit '登録'
 
-= link_to 'ゲームの一覧', controller: 'web/games', action: :index
-br
-= link_to '感想の一覧', controller: 'web/reviews', action: :index
+= link_to 'ゲームの一覧', game_list_path

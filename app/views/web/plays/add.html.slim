@@ -6,13 +6,12 @@
   div.field
     = f.label :game
     br
-    input#search_key type="search"
-    = f.hidden_field :game_id
+    = f.select :game_id, @games.map{|g| [g.name, g.id]}, include_blank: true
 
-  /div.field
-  /  = f.label :game
-  /  br
-  /  = f.select :game_id, @games.map{|g| [g.name, g.id]}, include_blank: true
+    /input#search-key type="search" list="game-list" autocomplete="off"
+    /datalist#game-list
+    /  option value="カタン"
+    /= f.hidden_field :game_id
 
   div.actions
     = f.submit

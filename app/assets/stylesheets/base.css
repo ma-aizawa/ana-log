@@ -929,9 +929,7 @@ a, a:visited {
 	color: #333;
 }
 
-a:hover, a:active, a:focus, #heroNav a:hover, #heroNav a:visited:hover, #heroNav a:active, #heroNav a:focus, #formSubmit:hover, .contentModule a:hover, .contentModule a:visited:hover, .contentModule a:active, .contentModule a:focus { color: #777777; } {
-	color: #888;
-}
+a:hover, a:active, a:focus, #heroNav a:hover, #heroNav a:visited:hover, #heroNav a:active, #heroNav a:focus, #formSubmit:hover, .contentModule a:hover, .contentModule a:visited:hover, .contentModule a:active, .contentModule a:focus { color: #777777; }
 
 nav {
 	list-style: none;
@@ -1620,3 +1618,4 @@ code {
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
 }
+

@@ -255,7 +255,7 @@ nav ul li {
 }
 
 #overview {
-	padding-bottom: 10px;	
+	padding-bottom: 10px;
 }
 
 #overview h3 {
@@ -334,91 +334,91 @@ nav ul li {
 ===================================================================================================*/
 	/* Smaller than standard 960 (devices and browsers) */
 	@media only screen and (max-width: 959px) {
-		
+
 		nav ul li a, nav ul li button, nav ul li span, #detailViewBack {
 			font-size: 14px;
 		}
-		
+
 	}
 
 	/* Tablet portrait size to standard 960 (devices and browsers) */
 	@media only screen and (min-width: 768px) and (max-width: 959px) {
-		
+
 		.projectThumbnailHover h4 {
 			font-size: 18px;
 		}
-		
+
 		.projectThumbnailHover h5 {
 			font-size: 12px;
 			padding-top: 59px;
 		}
-		
+
 	}
 
 	/* All mobile sizes (devices and browser) */
 	@media only screen and (max-width: 767px) {
-		
+
 		#logo h1, #logoDetailView h1 {
 			line-height: 1.1;
 		}
-		
+
 		#logo h2, #logoDetailView h2 {
 			margin-top: -12px;
 		}
-		
+
 		header {
 			padding-top: 40px;
 		}
-		
+
 		nav {
 			padding-top: 9px;
 			margin-bottom: -11px;
 		}
-		
+
 		#overview {
 			padding-bottom: 0px;
 		}
-		
+
 		#overview h3 {
 			font-size: 24px;
 		}
-		
+
 		footer p {
 			font-size: 14px;
 		}
-		
+
 	}
 
 	/* Mobile landscape size to tablet portrait (devices and browsers) */
 	@media only screen and (min-width: 480px) and (max-width: 767px) {
-		
-		
-		
+
+
+
 	}
 
 	/* Mobile portrait size to mobile landscape size (devices and browsers) */
 	@media only screen and (max-width: 479px) {
-		
+
 		#logo h1, #logoDetailView h1 {
 			font-size: 32px;
 		}
-		
+
 		#logo h2, #logoDetailView h2 {
 			font-size: 14px;
 			margin-top: -12px;
 		}
-		
+
 		#overview h3 {
-			font-size: 24px;	
+			font-size: 24px;
 		}
-		
+
 		.projectThumbnailHover h4 {
 			font-size: 16px;
 		}
-		
+
 		.projectThumbnailHover h5 {
 			font-size: 14px;
 			padding-top: 60px;
 		}
-		
+
 	}

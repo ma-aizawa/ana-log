@@ -1,3 +1,4 @@
+# ruby '2.0.0'
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
@@ -16,6 +17,8 @@ gem 'turbolinks'
 
 gem 'mysql'
 gem 'mysql2'
+
+gem 'rails_12factor', group: :production
 
 group :doc do
   gem 'sdoc', require: false

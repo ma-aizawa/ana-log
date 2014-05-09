@@ -1,7 +1,5 @@
 AnaLog::Application.routes.draw do
   get '/' => 'web/plays#index', as: :play_history
-  get 'add' => 'web/plays#add', as: :add_play
-  post 'add' => 'web/plays#create', as: :create_play
 
   scope 'game' do
     get '/' => 'web/games#index', as: :game_list
@@ -12,6 +10,10 @@ AnaLog::Application.routes.draw do
   namespace :api do
     scope :game do
       get '/search' => 'games#search', as: :search_game
+    end
+
+    scope :play do
+      post 'add' => 'plays#create', as: :create_play
     end
   end
 end

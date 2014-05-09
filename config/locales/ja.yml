@@ -6,3 +6,8 @@ ja:
       play:
         date: 遊んだ日付
         game: 遊んだゲーム
+      game:
+        name: ゲームの名前
+        kana: ふりがな
+        description: どんなゲーム？
+

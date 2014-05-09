@@ -1,22 +1,27 @@
 h3 ゲーム登録
 
-= form_for(@game, url: {action: :create}) do |f|
-  div.field
-    = f.label :name
-    br
-    = f.text_field :name
+div.row
+  = form_for(@game, url: register_game_path) do |f|
+    fieldset
+      div.form-group
+        = f.label :name
+        br
+        = f.text_field :name, class: 'form-control'
 
-  div.field
-    = f.label :kana
-    br
-    = f.text_field :kana
+      div.form-group
+        = f.label :kana
+        br
+        = f.text_field :kana, class: 'form-control'
 
-  div.field
-    = f.label :description
-    br
-    = f.text_area :description
+      div.form-group
+        = f.label :description
+        br
+        = f.text_area :description, class: 'form-control'
 
-  div.actions
-    = f.submit '登録'
+      div.actions
+        = f.button '登録', type: 'submit', class: 'btn btn-primary'
 
-= link_to 'ゲームの一覧', game_list_path
+div.row
+  = link_to game_list_path
+    button.btn.btn-info ゲーム一覧に戻る
+

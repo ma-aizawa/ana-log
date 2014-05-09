@@ -2,10 +2,13 @@ h3 遊んだ履歴
 
 
 = form_for(@play, url: api_create_play_path, remote: true) do |f|
-  div.field
-    = f.date_field :date
-    = f.select :game_id, @games.map{|g| [g.name, g.id]}, include_blank: true
-    = f.submit '遊んだよ！'
+  fieldset
+    div.form-group
+      = f.date_field :date, class: 'form-control'
+    div.form-group
+      = f.select :game_id, @games.map{|g| [g.name, g.id]}, {include_blank: true}, class: 'form-control'
+    div.form-group
+      = f.button '遊んだよ！', type: 'submit', class: 'btn btn-primary', remote: true
 
 ul#play-list.project
   - @play_history.each do |play|
@@ -16,7 +19,8 @@ ul#play-list.project
 
 ul
   li
-    = link_to 'ゲームの一覧', game_list_path
+    = link_to game_list_path
+      button.btn.btn-default ゲームの一覧
 
 div
-  = "ver. #{Setting.version}"
+  = "ver #{Setting.version}"

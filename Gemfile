@@ -15,6 +15,8 @@ gem 'rabl'
 
 gem 'turbolinks'
 
+gem 'settingslogic'
+
 gem 'mysql'
 gem 'mysql2'
 

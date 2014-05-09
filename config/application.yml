@@ -1,0 +1,11 @@
+defaults: &defaults
+  version: 0.1
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

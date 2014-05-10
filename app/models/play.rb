@@ -1,5 +1,6 @@
 class Play < ActiveRecord::Base
   belongs_to :game
+  belongs_to :user
   has_one :review
 
   after_initialize :init
@@ -14,3 +15,4 @@ class Play < ActiveRecord::Base
     self.game.try(:name)
   end
 end
+

@@ -4,7 +4,7 @@ class Play < ActiveRecord::Base
 
   after_initialize :init
 
-  validates :game_id, :date, presence: true
+  validates :game_id, :user_id, :date, presence: true
 
   def init
     self.date ||= Date.today

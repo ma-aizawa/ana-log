@@ -1,14 +1,17 @@
 h3 遊んだ履歴
 
+= "user_id : #{@current_user.id}"
 
-= form_for(@play, url: api_create_play_path, remote: true) do |f|
-  fieldset
-    div.form-group
-      = f.date_field :date, class: 'form-control'
-    div.form-group
-      = f.select :game_id, @games.map{|g| [g.name, g.id]}, {include_blank: true}, class: 'form-control'
-    div.form-group
-      = f.button '遊んだよ！', type: 'submit', class: 'btn btn-primary', remote: true
+- unless @current_user.guest?
+  = form_for(@play, url: api_create_play_path, remote: true, html: {class: 'form-inline'}) do |f|
+    fieldset
+      div.form-group
+        = f.date_field :date, class: 'form-control'
+      div.form-group
+        = f.select :game_id, @games.map{|g| [g.name, g.id]}, {include_blank: true}, class: 'form-control'
+      = f.hidden_field :user_id, value: @current_user.id
+      div.form-group
+        = f.button '遊んだよ！', type: 'submit', class: 'btn btn-primary', remote: true
 
 ul#play-list.project
   - @play_history.each do |play|
@@ -16,6 +19,15 @@ ul#play-list.project
       = play.date
       |&nbsp;|&nbsp;
       = play.game_name
+
+- if @current_user.guest?
+  = form_tag login_path do |f|
+    input.form-control name="login_id" maxlength="2" style="width: 50px; display: inline; margin-right: 10px;"
+    button.btn.btn-success type="submit" ログイン
+- else
+  div style="margin-bottom: 20px;"
+    a href="#{logout_path}"
+      button.btn.btn-danger ログアウト
 
 ul
   li

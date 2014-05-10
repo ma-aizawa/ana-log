@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   rescue_from Exception, with: :record_error_log
 
   private
+  def current_user
+    @current_user ||= User.find_by_id(session[:user_id])
+    @current_user ||= User.find(9999)
+  end
+
   def record_error_log(e = nil)
     logger.warn(e.message)
     raise

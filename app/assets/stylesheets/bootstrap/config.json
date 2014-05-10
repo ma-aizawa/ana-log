@@ -360,11 +360,14 @@
     "@component-offset-horizontal": "180px"
   },
   "css": [
+    "type.less",
+    "grid.less",
     "tables.less",
     "forms.less",
     "buttons.less",
     "glyphicons.less",
     "button-groups.less",
+    "input-groups.less",
     "navs.less",
     "breadcrumbs.less",
     "pagination.less",
@@ -379,7 +382,8 @@
     "list-group.less",
     "panels.less",
     "wells.less",
-    "close.less"
+    "close.less",
+    "dropdowns.less"
   ],
   "js": []
 }

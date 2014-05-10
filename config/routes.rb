@@ -1,6 +1,9 @@
 AnaLog::Application.routes.draw do
   get '/' => 'web/plays#index', as: :play_history
 
+  post '/login' => 'web/users#login', as: :login
+  get '/logout' => 'web/users#logout', as: :logout
+
   scope 'game' do
     get '/' => 'web/games#index', as: :game_list
     get 'add' => 'web/games#add', as: :add_game

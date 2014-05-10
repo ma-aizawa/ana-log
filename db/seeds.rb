@@ -9,7 +9,7 @@ end
 User.create!(id: 1) unless User.exists?(id: 1)
 User.create!(id: 9999) unless User.exists?(id: 9999)
 
-Play.where(user_id: nil).fin_each do |pl|
+Play.where(user_id: nil).find_each do |pl|
   pl.user_id = 1
   pl.save!
 end

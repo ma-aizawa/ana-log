@@ -13,9 +13,9 @@ test:
 production:
   adapter: mysql
   encoding: utf8mb4
-  database: ana-log_production
+  database: production
   pool: 5
-  username: analog
-  password: analogadmin
+  username: root
+  password: rootpass
   timeout: 5000
   socket: /tmp/mysql.sock

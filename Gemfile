@@ -17,6 +17,9 @@ gem 'turbolinks'
 
 gem 'settingslogic'
 
+gem 'carrierwave'
+gem 'rmagick'
+
 gem 'mysql'
 gem 'mysql2'
 

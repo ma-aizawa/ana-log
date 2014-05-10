@@ -15,7 +15,7 @@ class Web::UsersController < Web::ApplicationController
   end
 
   private
-  def filter_loing_id(login_id)
+  def filter_login_id(login_id)
     # TODO unless login_id.to_i.to_s == login_id
     login_id.to_i
   end

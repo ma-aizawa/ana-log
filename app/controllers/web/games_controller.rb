@@ -17,6 +17,6 @@ class Web::GamesController < Web::ApplicationController
 
   private
   def game_params
-    params.require(:game).permit(:name, :kana, :kana, :kana, :description)
+    params.require(:game).permit(:name, :kana, :kana, :kana, :description, :image, :image_cache)
   end
 end

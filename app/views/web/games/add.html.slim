@@ -4,6 +4,13 @@ div.row
   = form_for(@game, url: register_game_path) do |f|
     fieldset
       div.form-group
+        = f.label :image
+        br
+        = image_tag @game.image.thumb.url if @game.image?
+        = f.file_field :image
+        = f.hidden_field :image_cache
+
+      div.form-group
         = f.label :name
         br
         = f.text_field :name, class: 'form-control'

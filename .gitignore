@@ -17,4 +17,5 @@
 
 vendor/bundle/*
 public/assets
+public/uploads
 config/database.yml

@@ -2,6 +2,8 @@ h3 登録済みゲーム一覧
 
 - @games.each do |game|
   div
+    - if game.image?
+      = image_tag game.image.thumb.url
     = game.name
     |&nbsp;|&nbsp;
     = game.description

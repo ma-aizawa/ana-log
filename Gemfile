@@ -18,7 +18,8 @@ gem 'turbolinks'
 gem 'settingslogic'
 
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', require: 'RMagick'
+gem 'fog'
 
 gem 'mysql'
 gem 'mysql2'
@@ -38,6 +39,7 @@ group :development, :test do
   gem 'sqlite3'
 
   gem 'pry-rails'
+  gem 'pry-nav'
   gem 'pry-doc'
   gem 'awesome_print'
 end

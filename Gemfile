@@ -19,7 +19,7 @@ gem 'settingslogic'
 
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
-gem 'fog'
+gem 'fog', '~> 1.3.1'
 
 gem 'mysql'
 gem 'mysql2'

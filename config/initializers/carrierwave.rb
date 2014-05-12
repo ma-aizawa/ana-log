@@ -8,7 +8,7 @@ CarrierWave.configure do |config|
 
   config.cache_dir = "#{Rails.root}/tmp/uploads"
   config.fog_directory = ENV['AWS_BUCKET_NAME']
-  config.fog_use_ssl_for_aws = false
+  config.fog_public = true
   config.fog_attributes = {'Cache-Control' => 'max-age=3600'}
 end
 

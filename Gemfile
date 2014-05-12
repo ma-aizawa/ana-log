@@ -17,9 +17,10 @@ gem 'turbolinks'
 
 gem 'settingslogic'
 
-gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
-gem 'fog', '~> 1.3.1'
+gem 'carrierwave'
+gem 'carrierwave-aws'
+gem 'fog'
 
 gem 'mysql'
 gem 'mysql2'

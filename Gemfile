@@ -20,7 +20,6 @@ gem 'settingslogic'
 gem 'rmagick', require: 'RMagick'
 gem 'carrierwave'
 gem 'carrierwave-aws'
-gem 'fog'
 
 gem 'mysql'
 gem 'mysql2'

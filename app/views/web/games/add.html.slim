@@ -7,7 +7,7 @@ div.row
         = f.label :image
         br
         = image_tag @game.image.thumb.url if @game.image?
-        = f.file_field :image
+        = f.file_field :image, class: 'form-group'
         = f.hidden_field :image_cache
 
       div.form-group

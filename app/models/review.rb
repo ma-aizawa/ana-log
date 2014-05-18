@@ -1,5 +1,7 @@
 class Review < ActiveRecord::Base
   belongs_to :play
 
-  validates :game_id, :body, presence: true
+  validates :play_id, :body, presence: true
+
+  mount_uploader :image, ImageUploader
 end

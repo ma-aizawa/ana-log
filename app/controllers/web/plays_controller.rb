@@ -6,5 +6,6 @@ class Web::PlaysController < Web::ApplicationController
     @play = Play.new
     @games = Game.all
   end
+
 end
 

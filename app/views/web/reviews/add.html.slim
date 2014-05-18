@@ -1,14 +1,23 @@
-= form_for(@review, url: {action: :create}) do |f|
-  div.field
-    = f.label :game
-    br
-    = f.select :game_id, @games.map{|g| [g.name, g.id]}, include_blank: true
+h3 感想登録
 
-  div.field
-    = f.label :body
-    br
-    = f.text_area :body
-  div.actions
-    = f.submit
+div.row
+  = form_for(@review, url: @review.id ? update_review_path(@play.id) : create_review_path(@play.id)) do |f|
+    fieldset
+      div.form-group
+        f.label :image
+        br
+        = image_tag @review.image.thumb.url if @review.image?
+        = f.file_field :image, class: 'form-control'
+        = f.hidden_field :image_cache
 
-= link_to '一覧', controller: 'web/reviews', action: :index
+      div.form-group
+        f.label :body
+        br
+        = f.text_area :body, class: 'form-control'
+
+      div.actions
+        = f.button '登録', type: 'submit', class: 'btn btn-primary'
+
+div.row
+  = link_to play_history_path
+    button.btn.btn-info 履歴一覧に戻る

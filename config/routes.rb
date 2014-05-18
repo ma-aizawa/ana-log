@@ -10,6 +10,12 @@ AnaLog::Application.routes.draw do
     post 'add' => 'web/games#create', as: :register_game
   end
 
+  scope :reviews do
+    get 'add/:play_id' => 'web/reviews#add', as: :add_review
+    post 'add/:play_id' => 'web/reviews#create', as: :create_review
+    patch 'add/:play_id' => 'web/reviews#create', as: :update_review
+  end
+
   namespace :api do
     scope :game do
       get '/search' => 'games#search', as: :search_game

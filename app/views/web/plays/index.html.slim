@@ -19,7 +19,9 @@ ul#play-list.project
      li
        - if play.review.try(:image?)
          = image_tag play.review.image.thumb.url
-         br
+       - elsif play.game.image?
+         = image_tag play.game.image.thumb.url
+       br
        = play.date
        |&nbsp;|&nbsp;
        = play.game_name

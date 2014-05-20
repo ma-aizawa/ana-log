@@ -1,2 +1,6 @@
-| $('#play-list').prepend($('<li/>').text('#{@play.date} | #{@play.game_name}').append($('<img>').prop('src', '#{asset_path 'new.png'}')));
+| $new_item = $('<li/>').append($('<img/>').prop('src', '#{@play.game.image.thumb.url}')).append($('<br/>'));
+| $new_item.append('#{@play.date} | #{@play.game_name}');
+| $new_item.append($('<img>').prop('src', '#{asset_path 'new.png'}'));
+| $link = $('<a/>').prop('href', '#{add_review_path(@play.id)}').append($new_item);
+| $('#play-list').prepend($link);
 | $('select').val('')

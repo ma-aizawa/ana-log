@@ -13,18 +13,32 @@ h3 遊んだ履歴
       div.form-group
         = f.button '遊んだよ！', type: 'submit', class: 'btn btn-primary', remote: true
 
-ul#play-list.project
+
+div.container
   - @play_history.each do |play|
-    = link_to add_review_path(play.id)
-     li
-       - if play.review.try(:image?)
-         = image_tag play.review.image.thumb.url
-       - elsif play.game.image?
-         = image_tag play.game.image.thumb.url
-       br
-       = play.date
-       |&nbsp;|&nbsp;
-       = play.game_name
+    = link_to '感想', add_review_path(play.id)
+    div.project
+      div.projectThumbnail
+        svg.thumbnailMask
+        - if play.review.try(:image?)
+          = image_tag play.review.image.url, class: 'thumbnailImage'
+        - elsif play.game.image?
+          = image_tag play.game.image.url, class: 'thumbnailImage'
+      div.projectInfo
+        h4
+          = play.date
+          |&nbsp;|&nbsp;
+          = play.game_name
+        div.projectNavCounter nanika
+        div.projectNav
+          div.projectNavEnlarge
+            button.enlargeButton View full-size
+          div.projectNavClose
+            button.closeButton Close
+          div.projectNavButtons
+            |prev -- next
+        p
+          = play.review.try(:body)
 
 - if @current_user.guest?
   = form_tag login_path do |f|

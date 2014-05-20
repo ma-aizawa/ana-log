@@ -101,7 +101,7 @@ nav ul li a, nav ul li button, nav ul li span, #detailViewBack a {
 	font-family: "Source Sans Pro", Arial, sans-serif;
 	font-weight: 700;
     font-style: normal;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 1.2;
 	letter-spacing: 0;
 	text-decoration: none;
@@ -272,8 +272,8 @@ nav ul li {
 }
 
 .projectInfo h4 {
-	padding-top: 10px;
-	padding-bottom: 8px;
+	padding-top: 6px;
+	padding-bottom: 6px;
 }
 
 .projectNavCounter {

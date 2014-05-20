@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
   private
   def current_user
     @current_user ||= User.find_by_id(session[:user_id])
-    @current_user ||= User.find(9999)
+    @current_user ||= guest_user
+  end
+
+  def guest_user
+    User.find_by_id(9999) || User.create!(id: 9999)
   end
 
   def record_error_log(e = nil)

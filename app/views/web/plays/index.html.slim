@@ -17,9 +17,12 @@ ul#play-list.project
   - @play_history.each do |play|
     = link_to add_review_path(play.id)
      li
-        = play.date
-        |&nbsp;|&nbsp;
-        = play.game_name
+       - if play.review.try(:image?)
+         = image_tag play.review.image.thumb.url
+         br
+       = play.date
+       |&nbsp;|&nbsp;
+       = play.game_name
 
 - if @current_user.guest?
   = form_tag login_path do |f|

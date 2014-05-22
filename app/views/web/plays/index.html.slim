@@ -14,7 +14,7 @@ h3 遊んだ履歴
         = f.button '遊んだよ！', type: 'submit', class: 'btn btn-primary', remote: true
 
 
-div.container
+div.container.play-history
   - @play_history.each do |play|
     div.project
       div.projectThumbnail
@@ -29,7 +29,7 @@ div.container
           |&nbsp;|&nbsp;
           = play.game_name
         div.projectNavCounter
-          = link_to '感想', add_review_path(play.id)
+          = link_to '感想', add_review_path(play.id), class: 'review-link'
         div.projectNav
           div.projectNavEnlarge
             button.enlargeButton View full-size
@@ -37,7 +37,7 @@ div.container
             button.closeButton Close
           div.projectNavButtons
             |prev -- next
-        p
+        p.body
           = play.review.try(:body)
 
 - if @current_user.guest?
@@ -56,3 +56,20 @@ ul
 
 div
   = "ver #{Setting.version}"
+
+div#project-template.project.hide
+  div.projectThumbnail
+    svg.thumbnailMask
+      img.thumbnailImage
+  div.projectInfo
+    h4
+    div.projectNavCounter
+      a.review-link 感想
+    div.projectNav
+      div.projectNavEnlarge
+        button.enlargeButton View full-size
+      div.projectNavClose
+        button.closeButton Close
+      div.projectNavButtons
+        |prev -- next
+    p.body

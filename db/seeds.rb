@@ -8,8 +8,8 @@
 
 require 'digest/sha1'
 
+User.create!(id: 0, user_id: 'guest', key_phrase: Digest::SHA1.hexdigest('guest')) unless User.exists?(id: 0)
 User.create!(id: 1, user_id: 'admin', key_phrase: Digest::SHA1.hexdigest('admin')) unless User.exists?(id: 1)
-User.create!(id: 9999, user_id: 'guest', key_phrase: Digest::SHA1.hexdigest('guest')) unless User.exists?(id: 9999)
 
 # Play.where(user_id: nil).find_each do |pl|
 #   pl.user_id = 1

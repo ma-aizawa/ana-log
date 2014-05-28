@@ -2,11 +2,11 @@ class User < ActiveRecord::Base
   validates :user_id, :key_phrase, presence: true
 
   def admin?
-    self.id == 0
+    self.id == 1
   end
 
   def guest?
-    self.id == 9999
+    self.id == 0
   end
 
   def match_key?(key_phrase)

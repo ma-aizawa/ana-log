@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def guest_user
-    User.find_by_id(0) || User.create!(id: 0)
+    User.find_by_id(0) || User.create!(id: 0, user_id: 'guest', key_phrase: Digest::SHA1.hexdigest('guest'))
   end
 
   def record_error_log(e = nil)

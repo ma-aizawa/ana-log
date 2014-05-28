@@ -9,9 +9,10 @@ h3 登録済みゲーム一覧
     = game.description
 
 br
-div.row
-  = link_to add_game_path
-    button.btn.btn-info ゲームを登録
+- unless @current_user.guest?
+  div.row
+    = link_to add_game_path
+      button.btn.btn-info ゲームを登録
 div.row
   = link_to play_history_path
     button.btn.btn-default 遊んだ履歴

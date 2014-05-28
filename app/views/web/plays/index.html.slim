@@ -1,5 +1,10 @@
 h3 遊んだ履歴
 
+- if flash[:notice]
+  div.has-error
+    label.control-label
+      = flash[:notice]
+
 = "user_id : #{@current_user.id}"
 
 - unless @current_user.guest?
@@ -42,8 +47,16 @@ div.container.play-history
 
 - if @current_user.guest?
   = form_tag login_path do |f|
-    input.form-control name="login_id" type="number" maxlength="2" style="width: 50px; display: inline; margin-right: 10px;"
-    button.btn.btn-success type="submit" ログイン
+    div#login-form.form-group
+      label ID：
+      input.form-control name="login_id" maxlength="10" style="width: 80px; display: inline; margin-right: 10px; margin-left: 5px;"
+      label キー：
+      input.form-control name="key_phrase" type="password" style="width: 80px; display: inline; margin-right: 10px; margin-left: 5px;"
+
+    div.form-action style="margin-bottom: 10px;"
+      button#login-btn.submit-btn.btn.btn-success type="submit" style="margin-right: 10px;" ログイン
+      button#singup-btn.submit-btn.btn.btn-info type="submit" サインアップ
+      input#login-type type="hidden" name="login_type"
 - else
   div style="margin-bottom: 20px;"
     a href="#{logout_path}"
@@ -73,3 +86,5 @@ div#project-template.project.hide
       div.projectNavButtons
         |prev -- next
     p.body
+javascript:
+  var index = new IndexPlay()

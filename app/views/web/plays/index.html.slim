@@ -5,7 +5,7 @@ h3 遊んだ履歴
     label.control-label
       = flash[:notice]
 
-= "user_id : #{@current_user.id}"
+= "user_id : #{@current_user.user_id}"
 
 - unless @current_user.guest?
   = form_for(@play, url: api_create_play_path, remote: true, html: {class: 'form-inline'}) do |f|

@@ -8,6 +8,8 @@ AnaLog::Application.routes.draw do
     get '/' => 'web/games#index', as: :game_list
     get 'add' => 'web/games#add', as: :add_game
     post 'add' => 'web/games#create', as: :register_game
+    get 'edit/:id' => 'web/games#edit', as: :edit_game
+    patch 'edit/:id' => 'web/games#update', as: :update_game
   end
 
   scope :reviews do

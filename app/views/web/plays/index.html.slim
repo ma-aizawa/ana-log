@@ -1,9 +1,6 @@
 h3 遊んだ履歴
 
-- if flash[:notice]
-  div.has-error
-    label.control-label
-      = flash[:notice]
+= render partial: 'partials/error'
 
 = "user_id : #{@current_user.user_id}"
 

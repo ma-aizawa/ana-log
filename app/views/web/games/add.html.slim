@@ -1,7 +1,9 @@
 h3 ゲーム登録
 
+= render partial: 'partials/error'
+
 div.row
-  = form_for(@game, url: register_game_path) do |f|
+  = form_for(@game, url: (@game.id ? update_game_path(@game.id) : register_game_path)) do |f|
     fieldset
       div.form-group
         = f.label :image
@@ -26,8 +28,9 @@ div.row
         = f.text_area :description, class: 'form-control'
 
       div.actions
-        = f.button '登録', type: 'submit', class: 'btn btn-primary'
-
+        - if @game.id
+          = f.hidden_field :id
+        = f.button (@game.id ? '更新' : '登録'), type: 'submit', class: 'btn btn-primary'
 div.row
   = link_to game_list_path
     button.btn.btn-info ゲーム一覧に戻る

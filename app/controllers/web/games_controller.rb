@@ -17,8 +17,30 @@ class Web::GamesController < Web::ApplicationController
     render :add
   end
 
+  def edit
+    @game = Game.find(params[:id])
+    render :add
+  rescue ActiveRecord::RecordNotFound
+    redirect_to game_list_path
+  end
+
+  def update
+    @game = Game.find(game_id_param)
+    @game.update!(game_params)
+
+    flash[:notice] = '更新成功'
+    redirect_to game_list_path
+  rescue ActiveRecord::RecordInvalid
+    flash.now[:notice] = '入力した値が間違っているよ'
+    render :add
+  end
+
   private
+  def game_id_param
+    params.require(:game).permit(:id)[:id]
+  end
+
   def game_params
-    params.require(:game).permit(:name, :kana, :kana, :kana, :description, :image, :image_cache)
+    params.require(:game).permit(:name, :kana, :description, :image, :image_cache)
   end
 end

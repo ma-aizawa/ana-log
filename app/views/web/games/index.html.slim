@@ -1,12 +1,16 @@
 h3 登録済みゲーム一覧
 
+= render partial: 'partials/error'
+
 - @games.each do |game|
   div
-    - if game.image?
-      = image_tag game.image.thumb.url
-    = game.name
-    |&nbsp;|&nbsp;
-    = game.description
+    = link_to edit_game_path(game.id)
+      - if game.image?
+        = image_tag game.image.thumb.url, width: '250', height: '250'
+      br
+      = game.name
+      |&nbsp;|&nbsp;
+      = game.description
 
 br
 - unless @current_user.guest?

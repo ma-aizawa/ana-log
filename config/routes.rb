@@ -10,6 +10,7 @@ AnaLog::Application.routes.draw do
     post 'add' => 'web/games#create', as: :register_game
     get 'edit/:id' => 'web/games#edit', as: :edit_game
     patch 'edit/:id' => 'web/games#update', as: :update_game
+    delete 'edit/:id' => 'web/games#delete', as: :delete_game
   end
 
   scope :reviews do

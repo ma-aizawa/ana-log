@@ -31,6 +31,11 @@ div.row
         - if @game.id
           = f.hidden_field :id
         = f.button (@game.id ? '更新' : '登録'), type: 'submit', class: 'btn btn-primary'
+- if @current_user.admin?
+  div.row
+    = form_for(@game, url: delete_game_path(@game.id), method: :delete) do |f|
+      = f.button '削除', type: 'submit', class: 'btn btn-danger', confirm: 'まじ？'
+      |&nbsp;※&nbsp;admin専用
 div.row
   = link_to game_list_path
     button.btn.btn-info ゲーム一覧に戻る

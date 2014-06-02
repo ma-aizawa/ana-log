@@ -35,6 +35,18 @@ class Web::GamesController < Web::ApplicationController
     render :add
   end
 
+  def delete
+    if @current_user.admin?
+      game = Game.find(params[:id])
+      game_name = game.name
+      game.destroy
+      flash[:notice] = "#{game_name}を削除したよ"
+    else
+      flash[:notice] = 'あなたには削除できません'
+    end
+    redirect_to game_list_path
+  end
+
   private
   def game_id_param
     params.require(:game).permit(:id)[:id]

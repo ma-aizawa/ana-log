@@ -1,5 +1,5 @@
 class Review < ActiveRecord::Base
-  belongs_to :play
+  belongs_to :play, dependent: :destroy
 
   validates :play_id, :body, presence: true
 

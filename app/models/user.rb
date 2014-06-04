@@ -7,16 +7,23 @@ class User < ActiveRecord::Base
   end
 
   def guest?
-    self.id == 0
+    self.id == 2
   end
 
   def match_key?(key_phrase)
     self.key_phrase == Digest::SHA1.hexdigest(key_phrase)
   end
 
-  def self.create!(attrs = {})
-    key_phrase = attrs[:key_phrase]
-    attrs[:key_phrase] = Digest::SHA1.hexdigest(key_phrase)
-    super(attrs)
+  class << self
+    def create!(attrs = {})
+      key_phrase = attrs[:key_phrase]
+      attrs[:key_phrase] = Digest::SHA1.hexdigest(key_phrase)
+      super(attrs)
+    end
+
+    def find_guest
+      guest = User.find_by_id(2) || User.create!(id: 2, user_id: 'guest', key_phrase: 'guest')
+      guest
+    end
   end
 end

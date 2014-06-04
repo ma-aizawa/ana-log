@@ -4,7 +4,15 @@ h3 登録済みゲーム一覧
 
 - @games.each do |game|
   div
-    = link_to edit_game_path(game.id)
+    - if @current_user.admin?
+      = link_to edit_game_path(game.id)
+        - if game.image?
+          = image_tag game.image.thumb.url, width: '250', height: '250'
+        br
+        = game.name
+        |&nbsp;|&nbsp;
+        = game.description
+    - else
       - if game.image?
         = image_tag game.image.thumb.url, width: '250', height: '250'
       br

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   validates :user_id, :key_phrase, presence: true
+  validates :user_id, uniqueness: true
 
   def admin?
     self.id == 1
@@ -11,5 +12,11 @@ class User < ActiveRecord::Base
 
   def match_key?(key_phrase)
     self.key_phrase == Digest::SHA1.hexdigest(key_phrase)
+  end
+
+  def self.create!(attrs = {})
+    key_phrase = attrs[:key_phrase]
+    attrs[:key_phrase] = Digest::SHA1.hexdigest(key_phrase)
+    super(attrs)
   end
 end

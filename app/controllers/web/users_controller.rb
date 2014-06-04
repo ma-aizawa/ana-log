@@ -16,7 +16,7 @@ class Web::UsersController < Web::ApplicationController
     end
     redirect_to play_history_path
   rescue ActiveRecord::RecordInvalid
-    flash[:notice] = '入力パラメータが足りないとか'
+    flash[:notice] = '多分もういるよ。それか入力パラメータが足りないとか'
     redirect_to play_history_path
   end
 

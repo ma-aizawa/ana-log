@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527141049) do
+ActiveRecord::Schema.define(version: 20140604114011) do
 
   create_table "games", force: true do |t|
     t.string "name"
@@ -36,5 +36,7 @@ ActiveRecord::Schema.define(version: 20140527141049) do
     t.string "user_id"
     t.string "key_phrase"
   end
+
+  add_index "users", ["user_id"], name: "index_users_on_user_id", unique: true
 
 end
